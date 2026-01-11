@@ -88,7 +88,7 @@ html{
     }
 
     #product-overview {
-        height: 60vh;
+        height: 70vh;
         text-align: center;
     }
 
@@ -476,3 +476,4 @@ button:hover {
         padding: 20px 10px;
     }
 }
+
