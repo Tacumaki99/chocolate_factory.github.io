@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chocolate Factory</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header id="header">
+    <h1 class="title">Chocolate Factory</h1>
+    <nav class="nav">
+        <a href="#header">Home</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <section id="product-overview">
+        <h2>Get the freedom you deserve.</h2>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+        <h2 class="product-title">Our Products</h2>
+
+        <div class="product-holder" id="product-holder">
+            <!--<div class="product-card">
+                <img src="assets/images/Camera.jpg" alt="Chocolate Camera">
+                <h3>Chocolate Camera</h3>
+                <p class="price">$19.99</p>
+                <button type="button">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/Camera.jpg" alt="Chocolate Phone">
+                <h3>Chocolate Phone</h3>
+                <p class="price">$29.99</p>
+                <button type="button">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/Camera.jpg" alt="Chocolate Watch">
+                <h3>Chocolate Watch</h3>
+                <p class="price">$39.99</p>
+                <button type="button">Add to Cart</button>
+            </div>-->
+        </div>
+    </section>
+
+    <!--Services-->
+        <section id="services">
+            <div class="services-slider">
+
+                <!-- Services List -->
+                <ul class="services-list">
+                    <li data-index="0">Chocolate Workshops</li>
+                    <li data-index="1">Custom Chocolate</li>
+                    <li data-index="2">Factory Tours</li>
+                </ul>
+
+                <div class="services-track">
+
+                    <div class="service-slide slide-1">
+                        <div class="service-content">
+                            
+                            <p>Hands-on chocolate making with expert chocolatiers.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide slide-2">
+                        <div class="service-content">
+                            <p>Personalized chocolate creations for any occasion.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide slide-3">
+                        <div class="service-content">
+                            <p>Discover how fine chocolate is crafted.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Controls -->
+                <div class="service-controls">
+                    <button class="service-btn prev">❮</button>
+                    <div class="service-dots"></div>
+                    <button class="service-btn next">❯</button>
+                </div>
+
+            </div>
+        </section>
+
+    
+    <!-- Contact -->
+   <section id="contact">
+    <h2 class="signup-title">
+        Step into the world of fine chocolate. Reserve your place and enjoy a truly indulgent experience.
+    </h2>
+
+    <form action="index.html" method="post" class="signup-form">
+
+                    <div class="form-row">
+                    <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+                <span class="input-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+                <span class="input-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+                <span class="input-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" required>
+                <span class="input-error"></span>
+            </div>
+            <div class="form-group">
+                        <label for="event">Event</label>
+                        <select id="event" name="event" required>
+                            <option value="">Select an event</option>
+                            <option value="workshop">Chocolate Workshop</option>
+                            <option value="tour">Factory Tour</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="custom">Custom Experience</option>
+                        </select>
+                    </div>
+
+            <div class="form-group">
+                <label for="people">Number of People</label>
+                <input type="number" id="people" name="people" min="1" max="20" required>
+                <span class="input-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+                <span class="input-error"></span>
+            </div>
+
+                    <div class="form-error" id="form-error"></div>
+                    <button type="submit" class="button">Reserve Now</button>
+    </form>
+        </section>
+</main>
+
+<footer class="footer">
+    <p>© 2026 Chocolate Factory. All rights reserved.</p>
+</footer>
+
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+
+<!-- Your JavaScript -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
