@@ -55,7 +55,7 @@ html{
 #product-overview {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 10%, transparent),
     url("../images/product_overview.gif") center/cover no-repeat border-box,
-    #ff1b68;
+    #160108;
     width: 100%;
     height: 80vh;
     position: relative;
@@ -76,7 +76,6 @@ html{
         flex-direction: column;
         text-align: center;
         height: 8vh;
-        padding: 20px 20px;
     }
 
     .title {
@@ -85,17 +84,14 @@ html{
 
     .nav a {
         font-size: 20px;
-        margin: 0 8px;
+        margin: 0 10px;
     }
 
     #product-overview {
-        height: 80vh;
+        height: 60vh;
         text-align: center;
     }
 
-    #product-overview h2 {
-        font-size:4rem
-    }
 }
 
 /* Products */
@@ -459,17 +455,6 @@ button:hover {
     }
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-}
-
-
-
-
 @media (max-width: 600px) {
     .signup-form {
         width: 100%;
@@ -479,6 +464,121 @@ button:hover {
     .product-holder {
         padding: 20px 10px;
     }
+}
+
+/*Author*/
+
+@media(min-width:1000px){
+.about_author {
+    margin: 3rem auto;
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+  
+.about_author__image-container {
+  width: 60%;
+}
+
+.about_author__image {
+  width: 100%;
+  vertical-align: top;
+}
+
+.about_author__info {
+  text-align: right;
+  padding: 0.9rem;
+}
+
+
+  
+.about_author__name {
+  margin: 0.2rem;
+  font-size: 4rem;
+}
+
+.about_author__subtitle {
+  margin: 0;
+  font-size: 3rem;
+  color: #ccc;
+}
+  
+  
+.about_author__text {
+  margin: 0.2rem;
+}
+  
+@media(max-width:  1000px){
+    .about_author {
+    font-size: 1.2rem;
+    }
+
+    .about_author__image-container{
+        width: 100%;
+        max-width: 40rem;
+    }
+
+    .about_author__info {
+    width: 100%;
+  }
+}
+
+
+/* Footer */
+.footer {
+    background: #2b1406; /* dark chocolate */
+    color: #fff;
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Icons list */
+.footer .icons {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.footer .icons li {
+    display: flex;
+}
+
+/* Icon links */
+.footer .icons_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.footer .icons_link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Icon images */
+.footer .icons_link img {
+    width: 18px;
+    height: 18px;
+    
 }
 
 
