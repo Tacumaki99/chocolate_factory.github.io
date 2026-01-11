@@ -1,0 +1,438 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Winky Sans", sans-serif;
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgb(77, 38, 0);
+    color: #fff;
+}
+
+.title {
+    font-size: 48px;
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+#product-overview {
+    background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("images/freedom.jpg") center/cover no-repeat border-box,
+    #ff1b68;
+    width: 100%;
+    height: 33vh;
+    position: relative;
+}
+
+#product-overview h2 {
+    color: white;
+    font-family:'Winky Sans', sans-serif;
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    font-size: 1.6rem;
+}
+
+/* Products */
+
+#products {
+    padding: 40px;
+}
+
+.product-title{
+    font-size: 40px;
+    text-align: center;
+}
+
+.product-holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 15px 0;
+}
+
+.price {
+    font-size: 18px;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #27ae60;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #219150;
+}
+
+/* Services */
+#services {
+    width: 100%;
+    overflow: hidden;
+}
+
+.services-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.services-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.service-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    position: relative;
+}
+
+/* Overlay for readability */
+.service-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+/* Text */
+.service-content {
+    position: absolute;
+    bottom: 100px;
+    right: 60px;
+    max-width: 620px;
+    text-align: right;
+    z-index: 1;
+    padding: 2rem;
+}
+
+
+
+/* Text */
+.service-content p {
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+
+
+
+/* Controls wrapper */
+.service-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+}
+
+/* Navigation buttons */
+.service-btn {
+    position: absolute;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    z-index: 2;
+    bottom:5%;
+    
+}
+
+.service-btn.prev { right: 40px; }
+.service-btn.next { left: 40px; }
+
+/* Controls wrapper */
+
+/* Arrow buttons */
+
+
+.service-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Dots */
+.service-dots {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.service-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.service-dot.active {
+    background: #fff;
+    transform: scale(1.3);
+}
+
+
+/* Backgrounds per service */
+.slide-1 {
+    background: url("../images/service-workshop.jpg") center/cover no-repeat;
+}
+
+.slide-2 {
+    background: url("../images/service-custom.jpg") center/cover no-repeat;
+}
+
+.slide-3 {
+    background: url("../images/service-tour.jpg") center/cover no-repeat;
+}
+
+/* Services list */
+.services-list {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.services-list li {
+    color: rgba(255,255,255,0.7);
+    font-size: 4rem;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Active service */
+.services-list li.active {
+    color: #fff;
+    font-weight: 600;
+    transform: translateX(5px);
+}
+
+/* Hover effect */
+.services-list li:hover {
+    color: #fff;
+}
+
+
+
+/*contact*/
+#contact {
+    padding: 5rem 2rem;
+    background: #f8f3ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-title {
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+/* Form container */
+.signup-form {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Rows */
+.form-row {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    gap: 1rem;
+}
+
+/* Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.signup-form label {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #555;
+}
+
+/* Inputs */
+.signup-form input,
+.signup-form select {
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    outline: none;
+    border-color: #5a2d0c;
+    box-shadow: 0 0 0 2px rgba(90,45,12,0.15);
+}
+
+/* Checkbox */
+.signup-form__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.signup-form__checkbox a {
+    color: #5a2d0c;
+    text-decoration: none;
+}
+
+.signup-form__checkbox a:hover {
+    text-decoration: underline;
+}
+
+.input-error {
+    color: #b00020;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1rem;
+}
+
+.form-error {
+    color: #b00020;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+
+/* Button */
+.signup-form .button {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.signup-form .button:disabled {
+    background-color: #d3bfa5; /* lighter chocolate shade */
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.6; /* slight transparency */
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.signup-form .button:enabled {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-form {
+        padding: 2rem;
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .nav a {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+    #product-overview {
+        height: 25vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .signup-form {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .product-holder {
+        padding: 20px 10px;
+    }
+}
