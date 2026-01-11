@@ -16,6 +16,24 @@ const products = [
     name: "Chocolate Watch",
     price: 39.99,
     description: "Luxury design, sweet flavor."
+  },
+  {
+    image: "AroundA.jpg",
+    name: "Monkey A",
+    price: 19.99,
+    description: "A delicious chocolate replica of a monkey A."
+  },
+  {
+    image: "Horseshoe.jpg",
+    name: "Chocolate Phone",
+    price: 29.99,
+    description: "Looks like a horseshoe, tastes like chocolate."
+  },
+  {
+    image: "Lighter.jpg",
+    name: "Chocolate Watch",
+    price: 39.99,
+    description: "A delicious chocolate replica of a lighter."
   }
 ];
 
