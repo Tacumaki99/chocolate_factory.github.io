@@ -92,6 +92,9 @@ html{
         text-align: center;
     }
 
+    #product-overview h2 {
+        font-size:4rem
+    }
 }
 
 /* Products */
@@ -476,5 +479,6 @@ button:hover {
         padding: 20px 10px;
     }
 }
+
 
 
