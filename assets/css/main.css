@@ -562,8 +562,8 @@ button:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     transition: background 0.3s ease, transform 0.3s ease;
@@ -576,8 +576,8 @@ button:hover {
 
 /* Icon images */
 .footer .icons_link img {
-    width: 18px;
-    height: 18px;
+    width: 40px;
+    height: 40px;
     
 }
 
