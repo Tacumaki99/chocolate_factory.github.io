@@ -176,7 +176,6 @@ button:hover {
     position: relative;
 }
 
-/* Overlay for readability */
 .service-slide::before {
     content: "";
     position: absolute;
@@ -184,7 +183,6 @@ button:hover {
     background: rgba(0,0,0,0.45);
 }
 
-/* Text */
 .service-content {
     position: absolute;
     bottom: 100px;
@@ -195,9 +193,6 @@ button:hover {
     padding: 2rem;
 }
 
-
-
-/* Text */
 .service-content p {
     font-size: 2.5rem;
     line-height: 1.6;
@@ -214,8 +209,6 @@ button:hover {
 }
 }
 
-
-/* Controls wrapper */
 .service-controls {
     position: absolute;
     bottom: 30px;
@@ -227,7 +220,6 @@ button:hover {
     z-index: 2;
 }
 
-/* Navigation buttons */
 .service-btn {
     position: absolute;
     transform: translateY(-50%);
@@ -246,16 +238,10 @@ button:hover {
 .service-btn.prev { right: 40px; }
 .service-btn.next { left: 40px; }
 
-/* Controls wrapper */
-
-/* Arrow buttons */
-
-
 .service-btn:hover {
     background: rgba(0,0,0,0.8);
 }
 
-/* Dots */
 .service-dots {
     display: flex;
     gap: 0.6rem;
@@ -275,8 +261,6 @@ button:hover {
     transform: scale(1.3);
 }
 
-
-/* Backgrounds per service */
 .slide-1 {
     background: url("../images/workshop.gif") center/cover no-repeat;
 }
@@ -293,7 +277,6 @@ button:hover {
     background: url("../images/catering.gif") center/cover no-repeat;
 }
 
-/* Services list */
 .services-list {
     position: absolute;
     top: 30px;
@@ -312,18 +295,16 @@ button:hover {
     transition: color 0.3s, transform 0.3s;
 }
 
-/* Active service */
+
 .services-list li.active {
     color: #fff;
     font-weight: 600;
     transform: translateX(5px);
 }
 
-/* Hover effect */
 .services-list li:hover {
     color: #fff;
 }
-
 
 
 /*contact*/
@@ -342,7 +323,6 @@ button:hover {
     font-size: 1.8rem;
 }
 
-/* Form container */
 .signup-form {
     background: #fff;
     padding: 3rem;
@@ -352,14 +332,12 @@ button:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-/* Rows */
 .form-row {
     display: grid;
     grid-template-columns:  1fr 1fr;
     gap: 1rem;
 }
 
-/* Groups */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -372,7 +350,6 @@ button:hover {
     color: #555;
 }
 
-/* Inputs */
 .signup-form input,
 .signup-form select {
     padding: 0.7rem 0.8rem;
@@ -389,7 +366,6 @@ button:hover {
     box-shadow: 0 0 0 2px rgba(90,45,12,0.15);
 }
 
-/* Checkbox */
 .signup-form__checkbox {
     display: flex;
     align-items: center;
@@ -408,7 +384,7 @@ button:hover {
 }
 
 .input-error {
-    color: #b00020;
+    color: red;
     font-size: 0.85rem;
     margin-top: 0.25rem;
     display: block;
@@ -416,14 +392,13 @@ button:hover {
 }
 
 .form-error {
-    color: #b00020;
+    color: red;
     font-size: 0.9rem;
     margin-bottom: 1rem;
     display: none;
 }
 
 
-/* Button */
 .signup-form .button {
     width: 100%;
     padding: 0.9rem;
@@ -432,10 +407,10 @@ button:hover {
 }
 
 .signup-form .button:disabled {
-    background-color: #d3bfa5; /* lighter chocolate shade */
+    background-color: #d3bfa4; 
     color: #fff;
     cursor: not-allowed;
-    opacity: 0.6; /* slight transparency */
+    opacity: 0.6; 
     box-shadow: none;
     transition: all 0.3s ease;
 }
@@ -526,9 +501,9 @@ button:hover {
 }
 
 
-/* Footer */
+
 .footer {
-    background: #2b1406; /* dark chocolate */
+    background: black; 
     color: #fff;
     padding: 2rem 1.5rem;
     display: flex;
@@ -544,7 +519,6 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Icons list */
 .footer .icons {
     list-style: none;
     display: flex;
@@ -557,7 +531,6 @@ button:hover {
     display: flex;
 }
 
-/* Icon links */
 .footer .icons_link {
     display: inline-flex;
     align-items: center;
@@ -574,7 +547,7 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Icon images */
+
 .footer .icons_link img {
     width: 40px;
     height: 40px;

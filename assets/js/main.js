@@ -118,7 +118,7 @@ $(document).ready(function () {
     const form = $('.signup-form');
     const submitBtn = form.find('button[type="submit"]');
 
-    // RegEx patterns
+    
     const nameRegex  = /^[A-Za-zÀ-ž\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const phoneRegex = /^06[0-9+\s()-]{7,}$/;
@@ -162,7 +162,7 @@ $(document).ready(function () {
 
     const selectedDate = new Date(val);
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // remove time
+    today.setHours(0, 0, 0, 0); 
 
     if (selectedDate < today) {
         errorSpan.text('Date must be in the future.');
@@ -184,21 +184,21 @@ $(document).ready(function () {
         valid &= validateDate($('#date'));
         valid &= validateEvent($('#event'));
 
-        // Disable submit if invalid
+       
         submitBtn.prop('disabled', !valid);
 
         return valid;
     }
 
-    // Validate on input/change
+    
     form.find('input, select').on('input change', function () {
         validateForm();
     });
 
-    // Initial check
+   
     //validateForm();
 
-    // On submit
+    
     form.on('submit', function (e) {
         e.preventDefault();
         if (validateForm()) {
