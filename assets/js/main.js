@@ -6,32 +6,32 @@ const products = [
     description: "A delicious chocolate replica of a classic camera."
   },
   {
-    image: "Viola.png",
-    name: "Chocolate Phone",
+    image: "viola.png",
+    name: "Chocolate viola",
     price: 29.99,
     description: "Looks like a phone, tastes like chocolate."
   },
   {
     image: "Pistol.jpg",
-    name: "Chocolate Watch",
+    name: "Chocolate Pistol",
     price: 39.99,
     description: "Luxury design, sweet flavor."
   },
   {
     image: "AroundA.jpg",
-    name: "Monkey A",
+    name: "Chocolate @",
     price: 19.99,
     description: "A delicious chocolate replica of a monkey A."
   },
   {
     image: "Horseshoe.jpg",
-    name: "Chocolate Phone",
+    name: "Chocolate Horseshoe",
     price: 29.99,
     description: "Looks like a horseshoe, tastes like chocolate."
   },
   {
     image: "Lighter.jpg",
-    name: "Chocolate Watch",
+    name: "Chocolate Lighter",
     price: 39.99,
     description: "A delicious chocolate replica of a lighter."
   }
