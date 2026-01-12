@@ -121,7 +121,22 @@ $(document).ready(function () {
     // RegEx patterns
     const nameRegex  = /^[A-Za-zÀ-ž\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    const phoneRegex = /^[0-9+\s()-]{9,}$/;
+    const phoneRegex = /^06[0-9+\s()-]{7,}$/;
+
+    
+
+    function validateEvent(field){
+
+        const val = field.val();
+        const errorSpan = field.siblings('.input-error');
+        console.log(val);
+        if (val === "1") {
+        errorSpan.text('Please select event.');
+        return false;
+        }
+        errorSpan.text('');
+        return true;
+    }
 
     function validateField(field, regex, message) {
         const val = field.val().trim();
@@ -167,6 +182,7 @@ $(document).ready(function () {
         valid &= validateField($('#phone'), phoneRegex, 'Please enter a valid phone number.');
         valid &= validateField($('#people'), /^[1-9]\d*$/, 'Enter at least 1 person.');
         valid &= validateDate($('#date'));
+        valid &= validateEvent($('#event'));
 
         // Disable submit if invalid
         submitBtn.prop('disabled', !valid);
@@ -180,7 +196,7 @@ $(document).ready(function () {
     });
 
     // Initial check
-    validateForm();
+    //validateForm();
 
     // On submit
     form.on('submit', function (e) {
@@ -191,5 +207,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
