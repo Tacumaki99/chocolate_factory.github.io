@@ -121,7 +121,7 @@ $(document).ready(function () {
     // RegEx patterns
     const nameRegex  = /^[A-Za-zÀ-ž\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    const phoneRegex = /^[0-9+\s()-]{7,}$/;
+    const phoneRegex = /^[0-9+\s()-]{9,}$/;
 
     function validateField(field, regex, message) {
         const val = field.val().trim();
@@ -191,4 +191,5 @@ $(document).ready(function () {
         }
     });
 });
+
 
