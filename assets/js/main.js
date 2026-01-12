@@ -6,7 +6,7 @@ const products = [
     description: "A delicious chocolate replica of a classic camera."
   },
   {
-    image: "viola.png",
+    image: "Viola.png",
     name: "Chocolate viola",
     price: 29.99,
     description: "Looks like a phone, tastes like chocolate."
@@ -191,3 +191,4 @@ $(document).ready(function () {
         }
     });
 });
+
