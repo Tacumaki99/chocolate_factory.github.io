@@ -24,7 +24,7 @@ const products = [
     description: "A delicious chocolate replica of a monkey A."
   },
   {
-    image: "Horseshoe.jpg",
+    image: "Horse.jpg",
     name: "Chocolate Horseshoe",
     price: 29.99,
     description: "Looks like a horseshoe, tastes like chocolate."
@@ -207,3 +207,4 @@ $(document).ready(function () {
         }
     });
 });
+
