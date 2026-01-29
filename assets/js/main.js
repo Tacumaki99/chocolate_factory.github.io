@@ -1,13 +1,53 @@
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+//navigation
+const nav = [
+  {
+    name: "Home",
+    href: "#product-overview"
+  },
+  {
+    name: "Products",
+    href: "#products"
+  },
+  {
+    name: "Services",
+    href: "#services"
+  },
+  {
+    name: "Contact",
+    href: "#contact"
+  },
+  {
+    name: "Author",
+    href: "#author"
+  },
+  {
+    name: "Project",
+    href: "chocolateFactory.zip"
+  }
+]
+
+const navigation = document.getElementById("navigation");
+
+let navigation_html = "";
+
+nav.forEach(nav_item => {
+  navigation_html += `
+    <a href="${nav_item.href}">${nav_item.name}</a>
+  `;
+});
+
+navigation.innerHTML = navigation_html;
+
 function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  var x = document.getElementById("navigation");
+  if (x.classList.contains('myLinks')) {
+    x.classList.remove('myLinks')
   } else {
-    x.style.display = "block";
+    x.classList.add('myLinks')
   }
 }
 
+//products
 
 const products = [
   {
@@ -51,10 +91,10 @@ const products = [
 
 const holder = document.getElementById("product-holder");
 
-let html = "";
+let product_html = "";
 
 products.forEach(product => {
-  html += `
+  product_html += `
     <div class="product-card">
       <img src="assets/images/${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
@@ -64,9 +104,66 @@ products.forEach(product => {
   `;
 });
 
-holder.innerHTML = html;
+holder.innerHTML = product_html;
 
 //slider
+
+//services-list
+let services = [
+  {
+    index:0,
+    name:'Chocolate Workshops',
+    description: 'Hands-on chocolate making with expert chocolatiers.',
+    img: 'workshop.gif'
+  },
+  {
+    index:1,
+    name:'Custom Chocolate',
+    description: 'Personalized chocolate creations for any occasion.',
+    img: 'custom.gif'
+  },
+  {
+    index:2,
+    name:'Factory Tours',
+    description: 'Discover how fine chocolate is crafted.',
+    img: 'tour.gif'
+  },
+  {
+    index:3,
+    name:'Catering',
+    description: 'Delight your guests with handcrafted chocolate experiences tailored for your event.',
+    img: 'catering.gif'
+  }
+]
+
+const services_list = document.getElementById("services-list");
+
+let service_list_html = ''
+
+services.forEach(service => {
+  service_list_html += `
+    <li data-index="${service.index}">${service.name}</li>
+  `;
+});
+
+services_list.innerHTML = service_list_html;
+
+const services_track = document.getElementById("services-track");
+
+let services_track_html = ''
+
+services.forEach(service => {
+  services_track_html += `
+                  <div class="service-slide slide-${service.index}">
+                    <div class="service-content">
+                      <p>${service.description}</p>
+                    </div>
+                  </div>
+  `;
+});
+
+services_track.innerHTML = services_track_html;
+
 
 $(document).ready(function () {
     let index = 0;
@@ -74,7 +171,7 @@ $(document).ready(function () {
     const total = slides.length;
 
     const dotsContainer = $('.service-dots');
-    const serviceItems = $('.services-list li');
+    const serviceItems = $('#services-list li');
 
     // Create dots
     slides.each(function (i) {
@@ -84,7 +181,7 @@ $(document).ready(function () {
     const dots = $('.service-dot');
 
     function updateSlider() {
-        $('.services-track').css(
+        $('#services-track').css(
             'transform',
             `translateX(-${index * 100}%)`
         );
@@ -124,6 +221,144 @@ $(document).ready(function () {
 
 
 //form
+
+
+// Helper function to create elements with attributes
+function createEl(tag, attrs = {}, children = []) {
+    const el = document.createElement(tag);
+
+    Object.entries(attrs).forEach(([key, value]) => {
+        if (key === "class") el.className = value;
+        else if (key === "for") el.htmlFor = value;
+        else el.setAttribute(key, value);
+    });
+
+    children.forEach(child => {
+        if (typeof child === "string") {
+            el.appendChild(document.createTextNode(child));
+        } else {
+            el.appendChild(child);
+        }
+    });
+
+    return el;
+}
+
+// Create form
+const form = createEl("form", {
+    action: "#",
+    method: "post",
+    class: "signup-form"
+});
+
+// Create form row
+const formRow = createEl("div", { class: "form-row" });
+
+// Helper for input groups
+function createInputGroup(labelText, inputAttrs) {
+    const label = createEl("label", { for: inputAttrs.id }, [labelText]);
+    const input = createEl("input", inputAttrs);
+    const error = createEl("span", { class: "input-error" });
+
+    return createEl("div", { class: "form-group" }, [
+        label,
+        input,
+        error
+    ]);
+}
+
+// Text inputs
+formRow.appendChild(createInputGroup("First Name", {
+    type: "text",
+    id: "first-name",
+    name: "first_name",
+    required: true
+}));
+
+formRow.appendChild(createInputGroup("Last Name", {
+    type: "text",
+    id: "last-name",
+    name: "last_name",
+    required: true
+}));
+
+formRow.appendChild(createInputGroup("E-Mail", {
+    type: "email",
+    id: "email",
+    name: "email",
+    required: true
+}));
+
+formRow.appendChild(createInputGroup("Phone", {
+    type: "text",
+    id: "phone",
+    name: "phone",
+    required: true
+}));
+
+// Event select
+const eventLabel = createEl("label", { for: "event" }, ["Event"]);
+const eventSelect = createEl("select", {
+    id: "event",
+    name: "event",
+    required: true
+});
+
+[
+    { value: "1", text: "Select an event" },
+    { value: "workshop", text: "Chocolate Workshop" },
+    { value: "tour", text: "Factory Tour" },
+    { value: "corporate", text: "Catering" },
+    { value: "custom", text: "Custom Experience" }
+].forEach(opt =>
+    eventSelect.appendChild(createEl("option", { value: opt.value }, [opt.text]))
+);
+
+formRow.appendChild(
+    createEl("div", { class: "form-group" }, [
+        eventLabel,
+        eventSelect,
+        createEl("span", { class: "input-error" })
+    ])
+);
+
+// Number of people
+formRow.appendChild(createInputGroup("Number of People", {
+    type: "number",
+    id: "people",
+    name: "people",
+    min: "1",
+    max: "20",
+    required: true
+}));
+
+// Date
+formRow.appendChild(createInputGroup("Preferred Date", {
+    type: "date",
+    id: "date",
+    name: "date",
+    required: true
+}));
+
+// Form error + button
+
+formRow.appendChild(createEl("button", {
+    type: "submit",
+    class: "button",
+    disabled: true
+}, ["Reserve Now"]));
+
+// Assemble form
+form.appendChild(formRow);
+
+// Append to page
+
+
+var contact_section = document.getElementById('contact');
+contact_section.appendChild(form)
+console.log('contact_section')
+
+
 $(document).ready(function () {
 
     const form = $('.signup-form');
@@ -211,10 +446,31 @@ $(document).ready(function () {
 
     
     form.on('submit', function (e) {
-        e.preventDefault();
-        if (validateForm()) {
-            alert('Reservation submitted successfully!');
-            this.submit();
-        }
-    });
+    e.preventDefault();
+
+    if (validateForm()) {
+        // Show popup
+        $('#success-popup').addClass('active');
+
+        // Reset form
+        this.reset();
+
+        // Disable submit again
+        submitBtn.prop('disabled', true);
+
+        // Clear error messages
+        $('.input-error').text('');
+    }
+});
+
+$('#close-popup').on('click', function () {
+    $('#success-popup').removeClass('active');
+});
+
+$('#success-popup').on('click', function (e) {
+    if (e.target === this) {
+        $(this).removeClass('active');
+    }
+});
+
 });
