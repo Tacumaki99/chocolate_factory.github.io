@@ -98,13 +98,83 @@ products.forEach(product => {
     <div class="product-card">
       <img src="assets/images/${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
-      <p class="price">$${product.price}</p>
+      <p class="price" data-price="${product.price}">${product.price}</p>
       <button>Add to Cart</button>
     </div>
   `;
 });
 
 holder.innerHTML = product_html;
+
+//discount
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date().getDay();
+    // 0 = Sunday, 1 = Monday, 5 = Friday
+
+    if (today === 1 || today === 5) {
+
+    const discount = 0.20; // 20% discount
+    const prices = document.querySelectorAll(".price");
+
+    prices.forEach(function (priceElement) {
+
+    const originalPrice = parseFloat(priceElement.getAttribute("data-price"));
+    const discountedPrice = originalPrice - (originalPrice * discount);
+
+    priceElement.innerHTML = `
+                <span style="text-decoration: line-through; color: gray;">
+                    $${originalPrice.toFixed(2)}
+                </span>
+                <br>
+                <span style="color: #9c0d00; font-weight: bold;">
+                    $${discountedPrice.toFixed(2)}
+                </span>
+                <br>
+                <small style="color: green;">20% OFF 🎉</small>
+            `;
+});
+}
+
+});
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".product-card button");
+
+    buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+    showPopup();
+});
+});
+
+    function showPopup() {
+    const popup = document.createElement("div");
+    popup.classList.add("custom-popup");
+
+    popup.innerHTML = `
+            <div class="popup-content">
+                <h3>🛒 Shop Unavailable</h3>
+                <p>Shopping is currently unavailable.<br>
+                Please check back soon!</p>
+                <button class="close-popup">OK</button>
+            </div>
+        `;
+
+    document.body.appendChild(popup);
+
+    document.querySelector(".close-popup").addEventListener("click", function() {
+    popup.remove();
+});
+}
+
+});
+
+
+
 
 //slider
 
