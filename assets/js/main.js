@@ -47,6 +47,20 @@ function myFunction() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navLinks = document.querySelectorAll("#navigation a");
+    console.log(navLinks);
+    const navMenu = document.querySelector("#navigation");
+
+    navLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+            navMenu.classList.remove("myLinks");
+        });
+    });
+
+});
+
 //products
 
 const products = [
@@ -98,7 +112,7 @@ products.forEach(product => {
     <div class="product-card">
       <img src="assets/images/${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
-      <p class="price" data-price="${product.price}">${product.price}</p>
+      <p class="price" data-price="${product.price}">$${product.price}</p>
       <button>Add to Cart</button>
     </div>
   `;
@@ -116,7 +130,7 @@ holder.innerHTML = product_html;
 
     if (today === 1 || today === 5) {
 
-    const discount = 0.20; // 20% discount
+    const discount = 0.20;
     const prices = document.querySelectorAll(".price");
 
     prices.forEach(function (priceElement) {
@@ -293,7 +307,6 @@ $(document).ready(function () {
 //form
 
 
-// Helper function to create elements with attributes
 function createEl(tag, attrs = {}, children = []) {
     const el = document.createElement(tag);
 
@@ -314,17 +327,17 @@ function createEl(tag, attrs = {}, children = []) {
     return el;
 }
 
-// Create form
+
 const form = createEl("form", {
     action: "#",
     method: "post",
     class: "signup-form"
 });
 
-// Create form row
+
 const formRow = createEl("div", { class: "form-row" });
 
-// Helper for input groups
+
 function createInputGroup(labelText, inputAttrs) {
     const label = createEl("label", { for: inputAttrs.id }, [labelText]);
     const input = createEl("input", inputAttrs);
@@ -410,7 +423,6 @@ formRow.appendChild(createInputGroup("Preferred Date", {
     required: true
 }));
 
-// Form error + button
 
 formRow.appendChild(createEl("button", {
     type: "submit",
@@ -418,10 +430,8 @@ formRow.appendChild(createEl("button", {
     disabled: true
 }, ["Reserve Now"]));
 
-// Assemble form
-form.appendChild(formRow);
 
-// Append to page
+form.appendChild(formRow);
 
 
 var contact_section = document.getElementById('contact');
@@ -513,22 +523,16 @@ $(document).ready(function () {
 
    
     //validateForm();
-
-    
     form.on('submit', function (e) {
     e.preventDefault();
 
     if (validateForm()) {
-        // Show popup
         $('#success-popup').addClass('active');
 
-        // Reset form
         this.reset();
 
-        // Disable submit again
         submitBtn.prop('disabled', true);
 
-        // Clear error messages
         $('.input-error').text('');
     }
 });
